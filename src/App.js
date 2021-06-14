@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Newproj = () =>{
+    const [num, setNum] = useState(0);
+   const incNum = () => {
+       setNum(num+1);
+   };
+   const decNum = () => {
+    if (num > 0){
+    setNum(num-1);
+    }else{
+    
+    setNum(0);
+    alert("0 value is reached")
+    }
+};
+    
+   return(
+   <>
+        <div className="main_div">
+            <div className="centre_div">
+                <h1>{num}</h1>
+                <div className="btn_div">
+                    <button onClick={incNum}>Incre</button>
+                    <button onClick={decNum}>Decre</button>
+                </div>
+            </div>
+        </div>
 
-export default App;
+    </>
+   );
+};
+export default Newproj;
